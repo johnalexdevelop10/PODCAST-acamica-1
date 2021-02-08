@@ -1,0 +1,80 @@
+main {
+	.hero{
+		padding-top: 10%;
+		padding-left: 3vw;
+
+		.hero__title {
+			margin: 0;
+			font-family: $secondary-font;
+			font-weight: 400;
+			font-size: 2.25em;
+			line-height: 42px;
+			color: $primary-color;
+
+			.hero__title-block {
+				display: block;
+			}
+		}
+
+		.hero__text {
+			font-family: $primary-font;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 22px;
+			color: $primary-color;
+		}
+	}
+
+	// button for hero & footer
+	.button {
+		width: 93vw;
+		margin-top: 12%;
+		padding: 10px 0;
+		display: block;
+		border: none;
+		background-color: $tertiary-color;
+		font-family: $primary-font;
+		font-size: 1.25em;
+		line-height: 1.5em;
+		text-decoration: none;
+		text-align: center;
+		color: $primary-color;
+
+		&:hover {
+			background: $button-gradient;
+			color: white;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	main {
+		.hero {
+			padding-left: 10.5vw;
+
+			.hero__title {
+				font-size: 4em;
+				line-height: 1em;
+
+				.hero__title-block {
+					display: inline;
+				}
+
+				.hero__title-dot {
+					color: $secondary-color;
+				}
+			}
+
+			.hero__text {
+				max-width: 60vw;
+				margin-top: 3%;
+				font-size: 1em;
+				line-height: 1.5em;
+			}
+		}
+		.button {
+			max-width: 30vw;
+			margin-top: 5%;
+		}
+	}
+}

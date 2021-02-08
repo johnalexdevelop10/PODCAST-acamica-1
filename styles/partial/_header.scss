@@ -1,0 +1,145 @@
+header {
+	width: 100%;
+	background-color: white;
+	font-family: $primary-font;
+	overflow: hidden;
+
+	.logo {
+		.logo__img {
+			width: 42px;
+			float: left;
+			display: block;
+			padding: 16px 10px;
+			z-index: 100;
+		}
+	}
+	.nav-menu {
+		.nav-menu__list {
+			max-height: 0;
+			transition: max-height 0.3s ease-out;
+			clear: both;
+			margin: 0;
+			padding: 0;
+			background-color: $secondary-color;
+			list-style: none;
+
+			.nav-menu__item {
+				line-height: 28px;
+
+				.nav-menu__link {
+					display: block;
+					padding: 5%;
+					text-decoration: none;
+					color: #ffffff;
+
+					&:hover {
+						text-decoration: line-through;
+						color: $tertiary-color;
+					}
+					&:active {
+						text-decoration: line-through;
+						color: rgba(6, 10, 36, 0.56%);
+					}
+				}
+			}
+		}
+
+		.nav-menu__icon {
+			padding-top: 25px;
+			padding-right: 25px;
+			position: relative;
+			float: right;
+			cursor: pointer;
+
+			
+			.nav-menu__icon-lines {
+				width: 18px;
+				height: 2px;
+				position: relative;
+				display: block;
+				background-color: $primary-color;
+				transition: background 0.2s ease-out;
+
+				&:before {
+					background-color: $primary-color;
+					content: '';
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: absolute;
+					top: 5px;
+					transition: all 0.2s ease-out;
+				}
+
+				&:after {
+					background-color: $primary-color;
+					content: '';
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: absolute;
+					top: -5px;
+					transition: all 0.2s ease-out;
+				}
+			}
+		}
+
+		.nav-menu__checkbox {
+			display: none;
+		}
+
+		.nav-menu__checkbox:checked ~ .nav-menu__list {
+			max-height: 100%;
+		}
+
+		
+		.nav-menu__checkbox:checked ~ .nav-menu__icon .nav-menu__icon-lines {
+			background: transparent;
+		}
+
+		.nav-menu__checkbox:checked
+			~ .nav-menu__icon
+			.nav-menu__icon-lines:before {
+			transform: rotate(-45deg);
+			top: 0;
+		}
+
+		.nav-menu__checkbox:checked
+			~ .nav-menu__icon
+			.nav-menu__icon-lines:after {
+			transform: rotate(45deg);
+			top: 0;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		
+		.nav-menu {
+			.logo {
+				width: 48px;
+				height: 48px;
+			}
+
+			.nav-menu__list {
+				max-height: none;
+				clear: none;
+				float: right;
+
+				.nav-menu__item {
+					float: left;
+
+					.nav-menu__link {
+						padding: 22px;
+						background-color: #fff;
+						font-size: 16px;
+						color: $primary-color;
+					}
+				}
+			}
+
+			.nav-menu__icon {
+				display: none;
+			}
+		}
+	}
+}
